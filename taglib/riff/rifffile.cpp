@@ -309,7 +309,8 @@ void RIFF::File::read()
 
     if(static_cast<long long>(tell()) + chunkSize > length()) {
       debug("RIFF::File::read() -- Chunk '" + chunkName + "' has invalid size (larger than the file size)");
-      setValid(false);
+      //Add by Ocean for skip APEV2 tag
+      //setValid(false);
       break;
     }
 
